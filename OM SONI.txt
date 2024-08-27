@@ -1,0 +1,26 @@
+from sklearn.datasets import load_iris
+import pandas as pd
+
+# Load the Iris dataset
+iris = load_iris()
+
+# Convert the dataset into a DataFrame for easier exploration
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+iris_df['species'] = iris.target
+# Display the first five rows of the dataset
+print(iris_df.head())
+# Display the shape of the dataset
+print("Shape of the dataset:", iris_df.shape)
+
+# Display summary statistics
+summary_stats = iris_df.describe()
+print(summary_stats)
+
+# To include min and max values explicitly
+min_values = iris_df.min()
+max_values = iris_df.max()
+
+print("\nMinimum values:")
+print(min_values)
+print("\nMaximum values:")
+print(max_values)
